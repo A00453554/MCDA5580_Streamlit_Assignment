@@ -21,7 +21,7 @@ if(req.status_code==200):
     df_bitcoins.sort_values(by="date",inplace=True)
     df_bitcoins = df_bitcoins.set_index('date')
     st.line_chart(df_bitcoins)
-    average_price = df_bitcoins[currency].mean()
+    average_price = df_bitcoins[currency_selected].mean()
     result = "Average price during this time was "+ str(average_price)+' '+currency_selected
     st.write(result)
 
